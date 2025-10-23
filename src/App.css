@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  background-color: hsl(235, 36%, 46%);
+}
+header {
+  width: 100%;
+  background-color: aqua;
+  padding: 2rem 2rem;
+  font-family: "Red Hat Display";
+  font-size: 2rem;
+  color: hsl(235, 36%, 46%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* tarvitaan mobiilissa */
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* ако не се побират, да минат на следващ ред */
+  height: 100vh;
+  margin-top: 0.6rem; /* ето реално разстояние под header */
+  gap: 20px; /* разстояние между картите */
+  background-color: aqua;
+}
+
+.box {
+  background-color: white;
+  color: black;
+  width: 300px; /* фиксирана ширина */
+  height: 300px; /* квадрат */
+  display: flex;
+  flex-direction: column; /* подрежда елементите вертикално */
+  justify-content: center; /* центрира вертикално box */
+  align-items: center;
+  padding: 20px; /* малко вътрешно разстояние */
+  border-radius: 10px;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.attribution {
+  margin-top: 10px;
+  color: white;
+  font-size: 0.9em;
+  width: 100%;
+  background-color: aqua;
+  padding: 2rem 2rem;
+  font-family: "Red Hat Display";
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* tarvitaan mobiilissa */
+  box-sizing: border-box;
+}
+.attribution a {
+  color: hsl(235, 36%, 46%);
+  text-decoration: none;
+  margin-left: 0.3em;
+}
+
+.attribution a:hover {
+  text-decoration: underline;
+}
