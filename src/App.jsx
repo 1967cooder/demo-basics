@@ -1,8 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Card from "./Components/Card.jsx";
+import Counter from "./Components/Counter.jsx";
+import Footer from "./Components/Footer.jsx";
+import data from "./data";
 
 function App() {
+  // const { count, setCount } = useCounter(); // Using custom hook
+  const [count, setCount] = useState(0);
+  const [employees, setEmployees] = useState(data);
+
+  const handleClick = () => {
+    setEmployees([
+      ...employees,
+      {
+        id: employees.length + 1, //for form to work properly
+        name: "Jhon", //formData.name.value
+        title: "Developer", //formData.title.value
+        age: 66, //formData.age.value
+      },
+    ]);
+  };
   return (
     <>
       <header className="header">
@@ -10,12 +28,27 @@ function App() {
       </header>
 
       <div className="container">
-        <Card name="Maria" title="CEO" age="29" />
-        <Card name="Kati" title="Developer" age="25" />
-        <Card name="Karin" title="Designer" age="45" />
+        <button onClick={handleClick}>Add Employee</button>
+        {employees.map((employee) => {
+          console.log(employee);
+          let age = employee.age;
+          age = age + 100;
+
+          return (
+            <Card
+              key={employee.id}
+              name={employee.name}
+              title={employee.title}
+              age={age}
+            />
+          );
+        })}
+
+        <Counter count={count} setCount={setCount} />
       </div>
+
       <div className="attribution">
-        Copyright <a href="#">Silvana Lindholm</a>
+        <Footer count={count} setCount={setCount} />
       </div>
     </>
   );
