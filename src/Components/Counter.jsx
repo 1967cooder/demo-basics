@@ -9,6 +9,7 @@ const Counter = ({ count, setCount }) => {
   //     }
   //   };
   const handleBackgroundColor = () => {
+    //jos on aika paljon buttonit ja halutaan selkeyttaa koodia
     switch (true) {
       case count === 0:
         return "grey";

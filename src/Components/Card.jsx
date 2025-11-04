@@ -1,9 +1,11 @@
-function Card(props) {
+function Card({ name, title, age, isFavourite, togleFavourite, id }) {
   return (
     <div className="box">
-      <h2> {props.name}</h2>
-      <p>Title:{props.title}</p>
-      <p>Age:{props.age}</p>
+      <button onClick={() => togleFavourite(id)}>Toggle Favourite</button>
+      <h2> {name}</h2>
+      <p>Title:{title}</p>
+      <p>Age:{age}</p>
+      <p>Favourite:{isFavourite && <span>❤️</span>}</p>
     </div>
   );
 }
