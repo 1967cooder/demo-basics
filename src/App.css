@@ -21,6 +21,11 @@ header {
   box-sizing: border-box;
 }
 
+.nav-links {
+  display: flex;
+  gap: 50px;
+}
+
 .container {
   display: flex;
   justify-content: center;
@@ -70,6 +75,18 @@ form input {
   border-radius: 5px;
   font-size: 1rem;
   transition: 0.3;
+}
+
+button {
+  background-color: hsl(235, 36%, 46%);
+  color: white;
+  /* border: none; */
+  margin: 5px;
+  padding: 8px;
+  border-radius: 5px;
+  /* cursor: pointer; */
+  font-size: 1rem;
+  /* transition: background-color 0.3s ease; */
 }
 
 .attribution {
