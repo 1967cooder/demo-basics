@@ -5,7 +5,8 @@ import About from "./Components/About";
 import { createBrowserRouter, RouterProvider } from "react-router";
 import Layout from "./Layout";
 import ErrorPage from "./Components/ErrorPage";
-
+import Todos from "./Components/Todos";
+import SingleEmployee from "./Components/SingleEmployee";
 // function App() {
 //   return (
 //     <BrowserRouter>
@@ -27,8 +28,16 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
+        path: "employees/:id",
+        element: <SingleEmployee />,
+      },
+      {
         path: "about",
         element: <About />,
+      },
+      {
+        path: "todos",
+        element: <Todos />,
       },
       {
         path: "*",

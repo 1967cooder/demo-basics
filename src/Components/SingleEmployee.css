@@ -1,0 +1,98 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Red Hat Display", sans-serif;
+}
+
+/* Контейнер за цялата страница */
+.employee-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 2rem;
+  background-color: hsl(235, 36%, 46%);
+  color: #fff;
+}
+
+/* Заглавие */
+.employee-page-container h3 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+/* Стил за read-only информация */
+.employee-page-container p {
+  background-color: white;
+  color: black;
+  width: 300px;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+}
+
+/* Форма за редакция */
+.single-employee-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: white;
+  color: black;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+  width: 320px;
+  margin-bottom: 1rem;
+}
+
+/* Labels */
+.single-employee-container label {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* Inputs */
+.single-employee-container input {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.single-employee-container input:focus {
+  outline: none;
+  border-color: hsl(235, 36%, 30%);
+  box-shadow: 0 0 5px hsl(235, 36%, 30%);
+}
+
+/* Бутоните */
+button {
+  background-color: hsl(235, 36%, 46%);
+  color: white;
+  border: none;
+  margin: 5px 2px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: hsl(235, 36%, 36%);
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+  .employee-page-container p,
+  .single-employee-container {
+    width: 100%;
+  }
+}

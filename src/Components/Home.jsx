@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "../../src/App.css";
 import Card from "../Components/Card.jsx";
 import Counter from "../Components/Counter.jsx";
@@ -15,11 +15,22 @@ function Home() {
     title: "",
     age: "",
   });
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get("http://localhost:3001/employees").then((response) => {
-      setEmployees(response.data);
-    });
+    // Common error when handling loading state:
+    // setLoading(true); // This the error
+    axios
+      .get("http://localhost:3001/employees")
+      .then((response) => {
+        setEmployees(response.data);
+      })
+      .catch((error) => {
+        console.log("Error:", error.message);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   }, []);
 
   const handleDelete = (id) => {
@@ -54,6 +65,11 @@ function Home() {
     });
     setEmployees(updatedEmployees);
   };
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <>
       <div className="container">

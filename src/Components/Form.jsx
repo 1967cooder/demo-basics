@@ -44,10 +44,22 @@ function Form({ formData, setFormData, handleClick }) {
         {/* Alternatively you can use just button without submit type, and you have to take off e.preventDefault(); */}
         {/* <button type="button"onClick={handleClick}>Add Employee</button> */}
 
-        <p>Your name is: {formData.name}</p>
-        <p>Your title is: {formData.title}</p>
-        <p>Your age is: {formData.age}</p>
+        <button
+          type="button"
+          onClick={() =>
+            setFormData({
+              age: "",
+              name: "",
+              title: "",
+            })
+          }
+        >
+          Reset Form
+        </button>
       </form>
+      <p>Your name is: {formData.name}</p>
+      <p>Your title is: {formData.title}</p>
+      <p>Your age is: {formData.age}</p>
     </div>
   );
 }
