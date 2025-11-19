@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router";
+
 function Card({
   name,
   title,
@@ -8,7 +9,7 @@ function Card({
   id,
   handleDelete,
 }) {
-  console.log("Cards props -ID:", id, "Name:".name);
+  console.log("Cards props -ID:", id, "Name:");
 
   const navigate = useNavigate();
   return (
