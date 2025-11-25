@@ -5,6 +5,7 @@ import { useEffect, useState } from "react"; //iuseState s a React Hook that all
 //events. It runs after the component renders.
 import { useParams } from "react-router"; //This hook allows you to access dynamic parameters from the URL.
 //For example, if your route is /employees/5, useParams() will give you { id: "5" }.
+import useAxios from "../hooks/useAxios";
 import "./SingleEmployee.css";
 
 const SingleEmployee = () => {
@@ -25,10 +26,9 @@ const SingleEmployee = () => {
   const [formData, setFormData] = useState({
     //formData stores the values from the form inputs when editing.setFormData is used to update these values.
 
-    name: employee?.name || "", //ensures that we don’t get an error if employee is still null.
-    // ⚠️ Note: Initially, employee is null, so all fields will default to empty strings. Later, useEffect updates them after fetching data.
-    title: employee?.title || "",
-    age: employee?.age || "",
+    name: "",
+    title: "",
+    age: "",
   });
 
   const url = `https://demo-basics.onrender.com/employees/${id}`;
@@ -70,7 +70,6 @@ const SingleEmployee = () => {
 
   useEffect(() => {
     //runs after the component first renders.
-    axios;
     if (data) {
       setEmployee(data);
       setFormData({
@@ -85,7 +84,6 @@ const SingleEmployee = () => {
   if (loading || isLoading) {
     return <div>Loading...</div>;
   }
-
   if (isEditing) {
     //if isEditing is true, show the editable form.
     //Cancel → toggles edit mode off without saving.

@@ -33,6 +33,9 @@ const Header = () => {
           <Button color="inherit" component={Link} to="/todos">
             Todos
           </Button>
+          <Button color="inherit" component={Link} to="/employees/1">
+            Single Employee
+          </Button>
         </Box>
       </Toolbar>
     </AppBar>

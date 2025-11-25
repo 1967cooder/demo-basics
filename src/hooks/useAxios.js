@@ -4,7 +4,7 @@ import axios from "axios";
 const useAxios = (url, method = "get") => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [error, useError] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     async function fetchData() {
@@ -13,7 +13,7 @@ const useAxios = (url, method = "get") => {
         setData(response.data);
         setLoading(false);
       } catch (error) {
-        set(error);
+        setError(error);
         setLoading(false);
       }
     }
