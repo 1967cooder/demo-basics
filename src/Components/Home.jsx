@@ -5,6 +5,8 @@ import Card from "../Components/Card.jsx";
 import Counter from "../Components/Counter.jsx";
 import Footer from "../Components/Footer.jsx";
 import Form from "../Components/Form.jsx";
+import { Button } from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 function Home() {
   // const { count, setCount } = useCounter(); // Using custom hook
@@ -21,7 +23,7 @@ function Home() {
     // Common error when handling loading state:
     // setLoading(true); // This the error
     axios
-      .get("http://localhost:3001/employees")
+      .get("https://demo-basics.onrender.com/employees")
       .then((response) => {
         setEmployees(response.data);
       })
@@ -34,14 +36,16 @@ function Home() {
   }, []);
 
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:3001/employees/${id}`).then(() => {
-      setEmployees(employees.filter((employee) => employee.id !== id));
-    });
+    axios
+      .delete(`https://demo-basics.onrender.com/employees/${id}`)
+      .then(() => {
+        setEmployees(employees.filter((employee) => employee.id !== id));
+      });
   };
 
   const handleClick = () => {
     axios
-      .post("http://localhost:3001/employees", {
+      .post("https://demo-basics.onrender.com/employees", {
         id: String(employees.length + 1), //for form to work properly
         name: formData.name,
         title: formData.title,
@@ -73,6 +77,14 @@ function Home() {
   return (
     <>
       <div className="container">
+        <Button
+          variant="contained"
+          sx={{ padding: "200px" }}
+          startIcon={<DeleteIcon />}
+        >
+          {" "}
+          Click me I'm from MUI
+        </Button>
         {employees.map((employee) => {
           console.log(employee);
           let age = employee.age;

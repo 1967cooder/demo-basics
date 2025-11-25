@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router";
+import PropTypes from "prop-types";
 
 function Card({
   name,
@@ -26,4 +27,15 @@ function Card({
     </div>
   );
 }
+
+Card.propsTypes = {
+  name: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  age: PropTypes.number.isRequired,
+  isFavourite: PropTypes.bool,
+  id: PropTypes.string.isRequired,
+  handleDelete: PropTypes.func.isRequired,
+  toggleFavourite: PropTypes.func.isRequired,
+};
+
 export default Card;

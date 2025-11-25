@@ -15,7 +15,7 @@ const SingleEmployee = () => {
   // employee will later store the employee object retrieved from the backend.
   console.log("Employee: ", employee);
 
-  const [loading, setLoading] = useState(true); //Creates a loading state variable to track if the data is still being fetched.
+  const [isLoading, setIsLoading] = useState(false); //Creates a loading state variable to track if the data is still being fetched.
   //Initially true, because when the component loads, we haven’t finished fetching data yet.
   //Later, setLoading(false) is called once the data is retrieved.
 
@@ -30,6 +30,10 @@ const SingleEmployee = () => {
     title: employee?.title || "",
     age: employee?.age || "",
   });
+
+  const url = `https://demo-basics.onrender.com/employees/${id}`;
+
+  const { data, loading, error } = useAxios(url);
 
   const handleChange = (e) => {
     //This function handles input changes in the form.
@@ -48,7 +52,7 @@ const SingleEmployee = () => {
   const handleSave = () => {
     //when the user clicks the "Save" button.
     axios ////axios .put sends a PUT request to update the employee data on the server.
-      .put(`http://localhost:3001/employees/${id}`, formData) //updates the specific employee.formData → contains the updated name, title, and age.
+      .put(`https://demo-basics.onrender.com/employees/${id}`, formData) //updates the specific employee.formData → contains the updated name, title, and age.
       .then((response) => {
         //Runs if the request is successful.
         setEmployee(response.data); //Updates the employee state with the new data and exits edit mode.
@@ -60,30 +64,25 @@ const SingleEmployee = () => {
       })
       .finally(() => {
         //Runs regardless of success or failure.Stops the loading indicator.
-        setLoading(false);
+        setIsLoading(false);
       });
   };
 
   useEffect(() => {
     //runs after the component first renders.
-    axios
-      .get(`http://localhost:3001/employees/${id}`) //Makes a GET request to fetch the employee with the given id.
-      .then((response) => {
-        //Stores the response (employee object) in employee.
-        setEmployee(response.data); //Updates formData to pre-fill the edit form.
-        setFormData({
-          name: response.data.name,
-          title: response.data.title,
-          age: response.data.age,
-        });
-      })
-      .finally(() => {
-        setLoading(false); //Stops the loading indicator.
+    axios;
+    if (data) {
+      setEmployee(data);
+      setFormData({
+        name: data.name,
+        title: data.title,
+        age: data.age,
       });
-  }, [id]); //dependency array
+    }
+  }, [id, data, loading]); //dependency array
   //The effect runs again only if id changes.
 
-  if (loading) {
+  if (loading || isLoading) {
     return <div>Loading...</div>;
   }
 
