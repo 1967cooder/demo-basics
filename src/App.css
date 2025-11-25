@@ -97,13 +97,19 @@ button {
   background-color: aqua;
   padding: 1rem 1rem;
   font-family: "Red Hat Display";
-  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap; /* tarvitaan mobiilissa */
   box-sizing: border-box;
 }
+
+.attribution .counter-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* разстояние между бутоните и брояча */
+}
+
 .attribution a {
   color: hsl(235, 36%, 46%);
   text-decoration: none;

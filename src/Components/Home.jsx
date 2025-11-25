@@ -79,7 +79,7 @@ function Home() {
       <div className="container">
         <Button
           variant="contained"
-          sx={{ padding: "200px" }}
+          sx={{ padding: "50px" }}
           startIcon={<DeleteIcon />}
         >
           {" "}

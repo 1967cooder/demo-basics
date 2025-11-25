@@ -29,7 +29,15 @@ const Counter = ({ count, setCount }) => {
       {/* <div style={{ backgroundColor: count > 0 ? "green" : "red" }}>
         {count}
       </div> */}
-      <div style={{ backgroundColor: handleBackgroundColor() }}>{count}</div>
+      <div
+        style={{
+          textAlign: "center",
+          color: "white",
+          backgroundColor: handleBackgroundColor(),
+        }}
+      >
+        {count}
+      </div>
     </div>
   );
 };

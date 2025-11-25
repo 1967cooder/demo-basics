@@ -25,6 +25,7 @@ function Form({ formData, setFormData, handleClick }) {
           name="name"
           value={formData.name}
           onChange={handleChange}
+          autoComplete="name"
         />
         <label htmlFor="title">Title:</label>
         <input
@@ -32,6 +33,7 @@ function Form({ formData, setFormData, handleClick }) {
           name="title"
           value={formData.title}
           onChange={handleChange}
+          autoComplete="organization-title"
         />
         <label htmlFor="age">Age:</label>
         <input
@@ -39,6 +41,7 @@ function Form({ formData, setFormData, handleClick }) {
           name="age"
           value={formData.age}
           onChange={handleChange}
+          autoComplete="off"
         />
         <button type="submit">Add Employee</button>
         {/* Alternatively you can use just button without submit type, and you have to take off e.preventDefault(); */}

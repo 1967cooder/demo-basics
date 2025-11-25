@@ -1,13 +1,32 @@
 import React from "react";
 const Footer = ({ count, setCount }) => {
+  const handleBackgroundColor = () => {
+    if (count === 0) return "grey";
+    if (count > 0) return "green";
+    if (count < 0) return "red";
+  };
+
   return (
     <footer className="attribution">
       <div>
         Copyright <a href="#">Silvana Lindholm</a>
       </div>
-      <button onClick={() => setCount(count + 1)}>+</button>
-      <div>{count}</div>
-      <button onClick={() => setCount(count - 1)}>-</button>
+      <div className="counter-container">
+        <button onClick={() => setCount(count + 1)}>+</button>
+        <div
+          style={{
+            width: "40px",
+            height: "30px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            backgroundColor: handleBackgroundColor(),
+          }}
+        >
+          {count}
+        </div>
+        <button onClick={() => setCount(count - 1)}>-</button>
+      </div>
     </footer>
   );
 };

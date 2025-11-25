@@ -95,23 +95,29 @@ const SingleEmployee = () => {
           <label htmlFor="name">Name:</label>
           <input
             type="text"
+            id="name"
             name="name"
             value={formData.name}
             onChange={handleChange}
+            autoComplete="name"
           />
           <label htmlFor="title">Title:</label>
           <input
             type="text"
+            id="title"
             name="title"
             value={formData.title}
             onChange={handleChange}
+            autoComplete="organization-title"
           />
           <label htmlFor="age">Age:</label>
           <input
             type="text"
+            id="age"
             name="age"
             value={formData.age}
             onChange={handleChange}
+            autoComplete="off"
           />
         </form>
         <button onClick={toggleEdit}>Cancel</button>
