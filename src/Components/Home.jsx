@@ -57,7 +57,7 @@ function Home() {
       });
   };
 
-  const togleFavourite = (id) => {
+  const toggleFavourite = (id) => {
     const updatedEmployees = employees.map((employee) => {
       if (employee.id && employee.isFavourite === undefined) {
         return { ...employee, isFavourite: false };
@@ -94,7 +94,7 @@ function Home() {
             <Card
               key={employee.id}
               {...employee}
-              togleFavourite={togleFavourite}
+              toggleFavourite={toggleFavourite}
               handleDelete={handleDelete}
             />
           );

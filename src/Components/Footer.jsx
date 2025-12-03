@@ -1,3 +1,4 @@
+import { Typography } from "@mui/material";
 import React from "react";
 const Footer = ({ count, setCount }) => {
   const handleBackgroundColor = () => {
@@ -8,9 +9,10 @@ const Footer = ({ count, setCount }) => {
 
   return (
     <footer className="attribution">
-      <div>
-        Copyright <a href="#">Silvana Lindholm</a>
-      </div>
+      <Typography variant="body1">
+        Copirihgts<a href="#">Silvana Lindholm</a>
+      </Typography>
+
       <div className="counter-container">
         <button onClick={() => setCount(count + 1)}>+</button>
         <div

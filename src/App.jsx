@@ -7,6 +7,7 @@ import Layout from "./Layout";
 import ErrorPage from "./Components/ErrorPage";
 import Todos from "./Components/Todos";
 import SingleEmployee from "./Components/SingleEmployee";
+import EmployeesTable from "./Components/EmployeesTable";
 // function App() {
 //   return (
 //     <BrowserRouter>
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
         path: "/",
         index: true,
         element: <Home />,
+      },
+      {
+        path: "employeesTable",
+        element: <EmployeesTable />,
       },
       {
         path: "employees/:id",
