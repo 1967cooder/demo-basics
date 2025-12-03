@@ -133,13 +133,15 @@ const SingleEmployee = () => {
     //onClick={toggleEdit} sets an event handler: when the button is clicked, the toggleEdit function runs.
     //toggleEdit switches the state isEditing between true and false, which toggles between the display view and the edit form.
     //The button shows the text "Edit" on the page.
-    <div className="employee-page-container">
-      <h3>Employee Details</h3>
-      <p>Name: {employee?.name}</p>
-      <p>Title: {employee?.title}</p>
-      <p>Age: {employee?.age}</p>
-      <p>Is Favourite: {employee?.isFavourite ? "Yes" : "No"}</p>
-      <button onClick={toggleEdit}>Edit</button>
+    <div className="container">
+      <div className="employee-page-container">
+        <h3>Employee Details</h3>
+        <p>Name: {employee?.name}</p>
+        <p>Title: {employee?.title}</p>
+        <p>Age: {employee?.age}</p>
+        <p>Is Favourite: {employee?.isFavourite ? "Yes" : "No"}</p>
+        <button onClick={toggleEdit}>Edit</button>
+      </div>
     </div>
   );
 };

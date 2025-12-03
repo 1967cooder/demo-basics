@@ -12,12 +12,14 @@ const About = () => {
   //   };
   return (
     <>
-      <p>About</p>
+      <div className="container">
+        <p>About</p>
 
-      {/* <button onClick={() => handleNavigate()}> return to Home</button> */}
-      <button onClick={() => navigate("/")}> return to Home</button>
-      <div style={{ width: "100%", height: "500px" }}>
-        <CustomKideImage image={image} />
+        {/* <button onClick={() => handleNavigate()}> return to Home</button> */}
+        <button onClick={() => navigate("/")}> return to Home</button>
+        <div style={{ width: "100%", height: "500px" }}>
+          <CustomKideImage image={image} />
+        </div>
       </div>
     </>
   );

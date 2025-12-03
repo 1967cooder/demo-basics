@@ -32,30 +32,32 @@ const EmployeesTable = () => {
   // if (employees.length === 0) return <div>No data found</div>;
 
   return (
-    <TableContainer component={Paper}>
-      <Table>
-        <TableHead>
-          <TableRow>
-            <TableCell>ID</TableCell>
-            <TableCell>Name</TableCell>
-            <TableCell>Title</TableCell>
-            <TableCell>Age</TableCell>
-            <TableCell>Favourite</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {data.map((employee) => (
-            <TableRow key={employee.id}>
-              <TableCell>{employee.id}</TableCell>
-              <TableCell>{employee.name}</TableCell>
-              <TableCell>{employee.title}</TableCell>
-              <TableCell>{employee.age}</TableCell>
-              <TableCell>{employee.isFavourite ? "Yes" : "No"}</TableCell>
+    <div className="container">
+      <TableContainer component={Paper}>
+        <Table>
+          <TableHead>
+            <TableRow>
+              <TableCell>ID</TableCell>
+              <TableCell>Name</TableCell>
+              <TableCell>Title</TableCell>
+              <TableCell>Age</TableCell>
+              <TableCell>Favourite</TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+          </TableHead>
+          <TableBody>
+            {data.map((employee) => (
+              <TableRow key={employee.id}>
+                <TableCell>{employee.id}</TableCell>
+                <TableCell>{employee.name}</TableCell>
+                <TableCell>{employee.title}</TableCell>
+                <TableCell>{employee.age}</TableCell>
+                <TableCell>{employee.isFavourite ? "Yes" : "No"}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </div>
   );
 };
 
