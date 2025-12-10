@@ -5,8 +5,9 @@ import Card from "../Components/Card.jsx";
 import Counter from "../Components/Counter.jsx";
 import Footer from "../Components/Footer.jsx";
 import Form from "../Components/Form.jsx";
-import { Button } from "@mui/material";
+import { Button, ToggleButton } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
+import MyButton from "../Components/MyButton.jsx";
 
 function Home() {
   // const { count, setCount } = useCounter(); // Using custom hook
@@ -85,6 +86,9 @@ function Home() {
           {" "}
           Click me I'm from MUI
         </Button>
+
+        <MyButton />
+
         {employees.map((employee) => {
           console.log(employee);
           let age = employee.age;

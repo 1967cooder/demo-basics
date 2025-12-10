@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 
 import useAxios from "../hooks/useAxios";
+import EmployeeDataGrid from "./EmployeeDataGrid";
 
 const EmployeesTable = () => {
   const { data, loading, error } = useAxios(
@@ -33,6 +34,7 @@ const EmployeesTable = () => {
 
   return (
     <div className="container">
+      <EmployeeDataGrid />
       <TableContainer component={Paper}>
         <Table>
           <TableHead>

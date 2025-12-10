@@ -28,6 +28,10 @@ const router = createBrowserRouter([
         index: true,
         element: <Home />,
       },
+      // {
+      //   path: "EmployeeDataGrid",
+      //   element: <EmployeeDataGrid />,
+      // },
       {
         path: "employeesTable",
         element: <EmployeesTable />,
