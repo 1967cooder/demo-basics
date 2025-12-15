@@ -7,6 +7,9 @@ import { useParams } from "react-router"; //This hook allows you to access dynam
 //For example, if your route is /employees/5, useParams() will give you { id: "5" }.
 import useAxios from "../hooks/useAxios";
 import "./SingleEmployee.css";
+import UsernameForm from "./UsernameForm";
+import LoadingExample from "./LoadingExample";
+import FilteredList from "./FilteredList";
 
 const SingleEmployee = () => {
   const { id } = useParams(); //Extracts the id parameter from the URL.For example, if your URL is /employees/3, id will be "3".
@@ -134,6 +137,7 @@ const SingleEmployee = () => {
     //toggleEdit switches the state isEditing between true and false, which toggles between the display view and the edit form.
     //The button shows the text "Edit" on the page.
     <div className="container">
+      <FilteredList />
       <div className="employee-page-container">
         <h3>Employee Details</h3>
         <p>Name: {employee?.name}</p>
@@ -142,6 +146,9 @@ const SingleEmployee = () => {
         <p>Is Favourite: {employee?.isFavourite ? "Yes" : "No"}</p>
         <button onClick={toggleEdit}>Edit</button>
       </div>
+
+      <UsernameForm />
+      <LoadingExample />
     </div>
   );
 };

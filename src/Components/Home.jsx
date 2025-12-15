@@ -5,9 +5,12 @@ import Card from "../Components/Card.jsx";
 import Counter from "../Components/Counter.jsx";
 import Footer from "../Components/Footer.jsx";
 import Form from "../Components/Form.jsx";
-import { Button, ToggleButton } from "@mui/material";
+import { Button } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
-import MyButton from "../Components/MyButton.jsx";
+import ToggleButton from "./ToggleButton.jsx";
+import TextWithCounter from "./TextWithCounter.jsx";
+import TodoList from "./TodoList.jsx";
+import ParentAndChild from "./ParentAndChild.jsx";
 
 function Home() {
   // const { count, setCount } = useCounter(); // Using custom hook
@@ -87,7 +90,7 @@ function Home() {
           Click me I'm from MUI
         </Button>
 
-        <MyButton />
+        <ToggleButton />
 
         {employees.map((employee) => {
           console.log(employee);
@@ -105,11 +108,14 @@ function Home() {
         })}
 
         <Counter count={count} setCount={setCount} />
+        <TextWithCounter />
+        <TodoList />
         <Form
           formData={formData}
           setFormData={setFormData}
           handleClick={handleClick}
         />
+        <ParentAndChild />
       </div>
     </>
   );
