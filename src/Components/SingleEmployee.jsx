@@ -10,6 +10,8 @@ import "./SingleEmployee.css";
 import UsernameForm from "./UsernameForm";
 import LoadingExample from "./LoadingExample";
 import FilteredList from "./FilteredList";
+import useEmployees from "../hooks/useEmployees.js";
+import { useNavigate } from "react-router";
 
 const SingleEmployee = () => {
   const { id } = useParams(); //Extracts the id parameter from the URL.For example, if your URL is /employees/3, id will be "3".
@@ -35,6 +37,8 @@ const SingleEmployee = () => {
   });
 
   const url = `https://demo-basics.onrender.com/employees/${id}`;
+  const { handleDelete } = useEmployees(url);
+  const navigate = useNavigate();
 
   const { data, loading, error } = useAxios(url);
 
@@ -125,6 +129,14 @@ const SingleEmployee = () => {
         </form>
         <button onClick={toggleEdit}>Cancel</button>
         <button onClick={handleSave}>Save</button>
+        <button
+          onClick={() => {
+            handleDelete(id);
+            navigate("/");
+          }}
+        >
+          Delete
+        </button>
       </div>
     );
   }

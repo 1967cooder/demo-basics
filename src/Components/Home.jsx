@@ -11,41 +11,33 @@ import ToggleButton from "./ToggleButton.jsx";
 import TextWithCounter from "./TextWithCounter.jsx";
 import TodoList from "./TodoList.jsx";
 import ParentAndChild from "./ParentAndChild.jsx";
+import useEmployees from "../hooks/useEmployees.js";
 
 function Home() {
   // const { count, setCount } = useCounter(); // Using custom hook
   const [count, setCount] = useState(0);
-  const [employees, setEmployees] = useState([]);
+
+  const { employees, loading, error, fetchEmployees, handleDelete } =
+    useEmployees();
+
+  console.log("Employees: ", employees);
   const [formData, setFormData] = useState({
     name: "",
     title: "",
     age: "",
   });
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Common error when handling loading state:
-    // setLoading(true); // This the error
-    axios
-      .get("https://demo-basics.onrender.com/employees")
-      .then((response) => {
-        setEmployees(response.data);
-      })
-      .catch((error) => {
-        console.log("Error:", error.message);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+    fetchEmployees();
   }, []);
 
-  const handleDelete = (id) => {
-    axios
-      .delete(`https://demo-basics.onrender.com/employees/${id}`)
-      .then(() => {
-        setEmployees(employees.filter((employee) => employee.id !== id));
-      });
-  };
+  // const handleDelete = (id) => {
+  //   axios
+  //     .delete(`https://demo-basics.onrender.com/employees/${id}`)
+  //     .then(() => {
+  //       // setEmployees(employees.filter((employee) => employee.id !== id));
+  //     });
+  // };
 
   const handleClick = () => {
     axios
@@ -57,7 +49,7 @@ function Home() {
         isFavourite: false,
       })
       .then((response) => {
-        setEmployees([...employees, response.data]);
+        // setEmployees([...employees, response.data]);
       });
   };
 
@@ -71,7 +63,7 @@ function Home() {
         return employee;
       }
     });
-    setEmployees(updatedEmployees);
+    // setEmployees(updatedEmployees);
   };
 
   if (loading) {
