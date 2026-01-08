@@ -27,7 +27,7 @@ const useEmployees = () => {
       .then(() => {
         setState((prevState) => ({
           ...prevState,
-          employees: prevState.employes.filter(
+          employees: prevState.employees.filter(
             (employee) => employee.id !== id
           ),
         }));
