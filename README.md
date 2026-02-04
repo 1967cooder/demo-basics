@@ -12,6 +12,9 @@ A simple **React** application that displays **team member cards** with their na
 It demonstrates component-based architecture, props usage, and Flexbox layout for responsive card arrangement.
 
 ![Screenshot](./public/localhost_5173_.png)
+![Home](./public/home.png)
+![About](./public/about.png)
+![Single Employee](./public/single_employee.png)
 
 ## Features
 
@@ -98,4 +101,5 @@ GitHub [1967cooder](https://github.com/1967cooder/)
 LinkedIn: https://www.linkedin.com/in/silvanalindholm
 
 Email: silvanalindholm@hotmail.com
+
 # demo-basics
