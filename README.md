@@ -8,8 +8,15 @@
 
 ## Overview
 
-A simple **React** application that displays **team member cards** with their name, title, and age.  
-It demonstrates component-based architecture, props usage, and Flexbox layout for responsive card arrangement.
+**Team Cards App** is a simple React application built with **Vite** that displays team members as cards.  
+Each card shows a team member’s **name, job title, and age**.
+
+The project is designed for learning purposes and demonstrates:
+
+- React component-based architecture
+- Props usage
+- Basic routing/pages concept
+- Responsive layouts using Flexbox
 
 ![Screenshot](./public/localhost_5173_.png)
 ![Home](./public/home.png)
@@ -18,28 +25,37 @@ It demonstrates component-based architecture, props usage, and Flexbox layout fo
 
 ## Features
 
-- Display team members in styled cards
+- Team members displayed in clean, modern cards
 - Reusable `Card` component
-- Responsive layout using **Flexbox**
-- Simple header and footer design
+- Responsive layout using **CSS Flexbox**
+- Simple navigation between pages
+- Header and footer layout
+- Beginner-friendly React structure
 
 ## Tech Stack
 
-- **React** – Component-based frontend framework
-- **JavaScript (ES6)** – Logic and props handling
+- **React** – Component-based UI library
+- **Vite** – Fast development and build tool
+- **JavaScript (ES6)** – Logic, props, and components
 - **CSS3** – Flexbox layout, styling, shadows, and colors
 - **HTML (JSX)** – Structure of components
 
 ## Project Structure
 
+demo-basics/
 ├── public/
+│ ├── home.png
+│ ├── about.png
+│ ├── single_employee.png
 │ └── index.html
 ├── src/
 │ ├── Components/
 │ │ └── Card.jsx
 │ ├── App.css
-│ └── App.jsx
+│ ├── App.jsx
+│ └── main.jsx
 ├── package.json
+├── vite.config.js
 └── README.md
 
 ## Usage
@@ -50,18 +66,30 @@ It demonstrates component-based architecture, props usage, and Flexbox layout fo
    ```
 2. Navigate to the project folder:
 
-   cd team-cards-app
+```bash
+  cd demo-basics
+```
 
 3. Install dependencies:
 
+```bash
    npm install
+```
 
 4. Start the development server:
 
-npm start
+```bash
+npm run server
+```
 
-5. Open http://localhost:3000
-   to see the app in action.
+5. Open in browser
+
+```bash
+npm run dev
+```
+
+http://localhost:5173
+to see the app in action.
 
 Example Component
 <Card name="Maria" title="CEO" age="29" />
@@ -82,7 +110,21 @@ Aqua background for container and header
 
 White cards with black text
 
-Footer text styled to match header
+Footer text styled
+
+## Learning Goals
+
+This project helps practice:
+
+- React components and props
+
+- JSX syntax
+
+- Component reusability
+
+- Project structure with Vite
+
+- Basic UI layout and styling
 
 ## Links
 
@@ -94,7 +136,8 @@ Silvana Lindholm
 
 ## Contact
 
-Portfolio: [Live Demo](https://portfoliosilvana.netlify.app/)
+Portfolio1: [Live Demo1](https://portfoliosilvana.netlify.app/)
+Portfolio2: [Live Demo2](https://portfolio-react-silvana.netlify.app/)
 
 GitHub [1967cooder](https://github.com/1967cooder/)
 
