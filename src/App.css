@@ -1,62 +1,44 @@
-/* 
-
-
-
-*/
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Red Hat Display", sans-serif;
 }
 
-#root {
-  background-color: hsl(235, 36%, 46%);
-}
-header {
-  width: 100%;
-  background-color: aqua;
-  padding: 2rem 2rem;
-  font-family: "Red Hat Display";
-  font-size: 2rem;
-  color: hsl(235, 36%, 46%);
+/* Layout */
+.layout {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap; /* tarvitaan mobiilissa */
-  box-sizing: border-box;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-.nav-links {
+/* Main content - centered, responsive, with padding */
+.content {
+  flex: 1;
   display: flex;
-  gap: 50px;
-}
-
-.container {
-  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  flex-wrap: wrap; /* ако не се побират, да минат на следващ ред */
-  height: 100vh;
-  margin-top: 0.6rem; /* ето реално разстояние под header */
-  gap: 20px; /* разстояние между картите */
+  gap: 20px;
+  padding: 2rem;
   background-color: aqua;
 }
 
+/* Box cards (Home) */
 .box {
   background-color: white;
   color: black;
-  width: 300px; /* фиксирана ширина */
-  height: 300px; /* квадрат */
+  width: 300px;
+  height: 300px;
   display: flex;
-  flex-direction: column; /* подрежда елементите вертикално */
-  justify-content: center; /* центрира вертикално box */
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding: 20px; /* малко вътрешно разстояние */
+  padding: 20px;
   border-radius: 10px;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Form */
 .formcontainer {
   background-color: white;
   padding: 1rem;
@@ -66,62 +48,50 @@ header {
   flex-direction: column;
   gap: 10px;
   width: 300px;
-  font-family: "Red Hat Display", sans-serif;
-  gap: 10px;
 }
 
-form label {
-  font-weight: bold;
-  color: black;
+/* Header */
+header,
+.MuiAppBar-root {
+  width: 100%;
+  margin-bottom: 0.6rem;
 }
 
-form input {
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1rem;
-  transition: 0.3;
-}
-
-button {
-  background-color: hsl(235, 36%, 46%);
-  color: white;
-  /* border: none; */
-  margin: 5px;
-  padding: 8px;
-  border-radius: 5px;
-  /* cursor: pointer; */
-  font-size: 1rem;
-  /* transition: background-color 0.3s ease; */
-}
-
+/* Footer */
 .attribution {
   margin-top: 10px;
   color: white;
   font-size: 0.9em;
   width: 100%;
   background-color: aqua;
-  padding: 1rem 1rem;
-  font-family: "Red Hat Display";
+  padding: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap; /* tarvitaan mobiilissa */
-  box-sizing: border-box;
+  flex-wrap: wrap;
 }
 
-.attribution .counter-container {
-  display: flex;
-  align-items: center;
-  gap: 10px; /* разстояние между бутоните и брояча */
+/* Responsive breakpoints */
+@media (max-width: 600px) {
+  .content {
+    padding: 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  .box {
+    width: 90%;
+    height: auto;
+  }
 }
 
-.attribution a {
-  color: hsl(235, 36%, 46%);
-  text-decoration: none;
-  margin-left: 0.3em;
+@media (min-width: 601px) and (max-width: 900px) {
+  .box {
+    width: 45%;
+  }
 }
 
-.attribution a:hover {
-  text-decoration: underline;
+@media (min-width: 901px) {
+  .box {
+    width: 300px;
+  }
 }

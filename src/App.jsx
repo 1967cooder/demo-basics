@@ -71,6 +71,39 @@
 //----------------Create Hash Router v6.4+ for GitHub-----------------
 // import "./App.css";
 // import { BrowserRouter, Routes, Route, createBrowserRouter } from "react-router";
+
+//----------------Create Hash Router v6.4+ for GitHub-----------------
+// import { HashRouter, Routes, Route } from "react-router-dom";
+
+// import Home from "./Components/Home";
+// import About from "./Components/About";
+// import Layout from "./Layout";
+// import ErrorPage from "./Components/ErrorPage";
+// import Todos from "./Components/Todos";
+// import SingleEmployee from "./Components/SingleEmployee";
+// import EmployeesTable from "./Components/EmployeesTable";
+
+// function App() {
+//   return (
+//     <HashRouter>
+//       <Routes>
+//         <Route path="/" element={<Layout />}>
+//           <Route index element={<Home />} />
+//           {/* <Route path="EmployeeDataGrid" element={<EmployeeDataGrid />} /> */}
+//           <Route path="employeesTable" element={<EmployeesTable />} />
+//           <Route path="employees/:id" element={<SingleEmployee />} />
+//           <Route path="about" element={<About />} />
+//           <Route path="todos" element={<Todos />} />
+//           <Route path="*" element={<ErrorPage />} />
+//         </Route>
+//       </Routes>
+//     </HashRouter>
+//   );
+// }
+
+// export default App;
+//---------------------------------------------------------------
+import "./App.css";
 import { HashRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./Components/Home";
@@ -87,7 +120,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          {/* <Route path="EmployeeDataGrid" element={<EmployeeDataGrid />} /> */}
           <Route path="employeesTable" element={<EmployeesTable />} />
           <Route path="employees/:id" element={<SingleEmployee />} />
           <Route path="about" element={<About />} />
@@ -100,4 +132,3 @@ function App() {
 }
 
 export default App;
-//---------------------------------------------------------------
