@@ -5,6 +5,10 @@
   font-family: "Red Hat Display", sans-serif;
 }
 
+#root {
+  background-color: hsl(235, 36%, 46%);
+}
+
 /* Layout */
 .layout {
   display: flex;

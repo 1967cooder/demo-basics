@@ -19,9 +19,10 @@ The project is designed for learning purposes and demonstrates:
 - Responsive layouts using Flexbox
 
 ![Screenshot](./public/localhost_5173_.png)
-![Home](./public/home.png)
-![About](./public/about.png)
-![Single Employee](./public/single_employee.png)
+![Home](./public/home1.png)
+![About](./public/about1.png)
+![Single Employee](./public/single_employee1.png)
+![Mobile](./public/mobile.png)
 
 ## Features
 
